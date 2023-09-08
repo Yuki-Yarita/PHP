@@ -20,25 +20,22 @@ $ansSql = $mySql[1];
 <form action="answer.php" method = "post" class="centerText">
 <h2 class="centerText">①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php 
-foreach($portNumber as $key => $value) {
-  echo '<input type="radio" name="portNumber" value="' . $value . '"> ' . $value;
-}
-?>
+<?php foreach($portNumber as $key => $value) { ?>
+  <input type="radio" name="portNumber" value="<?php echo $value; ?>"> <?php echo $value; ?>
+<?php } ?>
+
 <h2 class="centerText">②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php 
-foreach($devLang as $key => $value) {
-  echo '<input type="radio" name="devLang" value="' . $value . '"> ' . $value;
-}
-?>
+<?php foreach($devLang as $key => $value) { ?>
+  <input type="radio" name="devLang" value="<?php echo $value; ?>"> <?php echo $value; ?>
+<?php } ?>
+
 <h2 class="centerText">③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-<?php 
-foreach($mySql as $key => $value) {
-  echo '<input type="radio" name="mySql" value="' . $value . '"> ' . $value;
-}
-?>
+<?php foreach($mySql as $key => $value) { ?>
+  <input type="radio" name="mySql" value="<?php echo $value; ?>"> <?php echo $value; ?>
+<?php } ?>
+
 <!--問題の正解の変数と名前の変数を[answer.php]に送る-->
 <input type="hidden" name="my_name" value="<?php echo $my_name; ?>">
 <input type="hidden" name="ansNum" value="<?php echo $ansNum; ?>">
